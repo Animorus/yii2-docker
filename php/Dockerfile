@@ -20,7 +20,7 @@ RUN install-php-extensions \
         pdo_mysql \
         pdo_pgsql \
         imagick \
-        mongodb \
+#        mongodb \
         xdebug
 
 # Disable xdebug by default (see PHP_ENABLE_XDEBUG)
