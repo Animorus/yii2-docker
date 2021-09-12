@@ -1,14 +1,11 @@
-<p align="center">
-    <a href="https://www.docker.com/" target="_blank">
-        <img src="https://www.docker.com/sites/default/files/mono_vertical_large.png" height="100px">
-    </a>
-    <h1 align="center">Yii2 PHP Docker Image</h1>
-    <br>
-</p>
+This is a fork of the official  [Yii 2.0 Framework](http://www.yiiframework.com/) image [repository](https://github.com/yiisoft/yii2-docker). The functionality has been changed to suit my personal needs.
 
-[![Build Status](https://github.com/yiisoft/yii2-docker/actions/workflows/docker-image.yml/badge.svg)](https://github.com/yiisoft/yii2-docker/actions/workflows/docker-image.yml)
-
-This is the repo of the official [Yii 2.0 Framework](http://www.yiiframework.com/) image on [DockerHub](https://hub.docker.com/r/yiisoftware/yii2-php/) for PHP.
+#####Features:
+- Apache only
+- Removed flavor dockerfile
+- Added mySQL
+- Added phpMyAdmin
+- Disabled mongoDB
 
 ## About
 
@@ -18,16 +15,15 @@ The `Dockerfile`(s) of this repository are designed to build from different PHP-
 ### Available versions for `yiisoftware/yii2-php`
 
 ```
-8.0-apache, 8.0-fpm
-7.4-apache, 7.4-fpm 
+8.0
+7.4 
 ```
 
 #### Deprecated or EOL versions
 
 ```
-7.3-apache, 7.3-fpm
-7.2-apache, 7.1-apache, 7.0-apache, 5.6-apache
-7.2-fpm, 7.1-fpm, 7.0-fpm, 5.6-fpm
+7.3
+7.2, 7.1, 7.0, 5.6
 ```
 
 ## Setup
@@ -40,6 +36,8 @@ Adjust the versions in `.env` if you want to build a specific version.
 
 - `PHP_ENABLE_XDEBUG` whether to load an enable Xdebug, defaults to `0` (false)
 - `PHP_USER_ID` (Debian only) user ID, when running commands as webserver (`www-data`), see also [#15](https://github.com/yiisoft/yii2-docker/issues/15)
+- `MYSQL_ROOT_PASSWORD` - this variable is mandatory and specifies the password that will be set for the root superuser account.
+- `MYSQL_DATABASE` - this variable is optional and allows you to specify the name of a database to be created on image startup
 
 ## Building
 
@@ -58,6 +56,4 @@ so you have to configure your IDE to receive connections from that ip.
 
 ## FAQ
 
-- We do not officially support Alpine images, due to numerous issues with PHP requirements and because framework tests are not passing.
 - Depending on the (Debian) base-image (usually PHP <7.4) you might need to set `X_LEGACY_GD_LIB=1`
-- test
