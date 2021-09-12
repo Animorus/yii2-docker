@@ -12,32 +12,18 @@ This is a fork of the official  [Yii 2.0 Framework](http://www.yiiframework.com/
 These Docker images are built on top of the official PHP Docker image, they contain additional PHP extensions required to run Yii 2.0 framework, but no code of the framework itself.
 The `Dockerfile`(s) of this repository are designed to build from different PHP-versions by using *build arguments*.
 
-### Available PHP versions
-
-```
-8.0
-7.4 
-```
-
-#### Deprecated or EOL versions
-
-```
-7.3
-7.2, 7.1, 7.0, 5.6
-```
-
 ## Setup
 
     cp .env-dist .env
 
-Adjust the versions in `.env` if you want to build a specific version.
-
 ## Configuration
 
-- `PHP_ENABLE_XDEBUG` - whether to load an enable Xdebug
+- `PHP_BASE_IMAGE_VERSION` - PHP build version. For example, `7.4`, `8.0`
+- `PHP_ENABLE_XDEBUG` - whether to load an enable Xdebug. Default value `1` (true) 
 - `PHP_USER_ID` - user ID, when running commands as webserver (`www-data`), see also [#15](https://github.com/yiisoft/yii2-docker/issues/15)
 - `MYSQL_ROOT_PASSWORD` - this variable is mandatory and specifies the password that will be set for the root superuser account.
 - `MYSQL_DATABASE` - this variable is optional and allows you to specify the name of a database to be created on image startup
+
 
 ## Building
 
