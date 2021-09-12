@@ -12,7 +12,7 @@ This is a fork of the official  [Yii 2.0 Framework](http://www.yiiframework.com/
 These Docker images are built on top of the official PHP Docker image, they contain additional PHP extensions required to run Yii 2.0 framework, but no code of the framework itself.
 The `Dockerfile`(s) of this repository are designed to build from different PHP-versions by using *build arguments*.
 
-### Available versions for `yiisoftware/yii2-php`
+### Available PHP versions
 
 ```
 8.0
