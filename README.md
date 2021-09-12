@@ -35,7 +35,7 @@ Adjust the versions in `.env` if you want to build a specific version.
 ## Configuration
 
 - `PHP_ENABLE_XDEBUG` whether to load an enable Xdebug, defaults to `0` (false)
-- `PHP_USER_ID` (Debian only) user ID, when running commands as webserver (`www-data`), see also [#15](https://github.com/yiisoft/yii2-docker/issues/15)
+- `PHP_USER_ID` user ID, when running commands as webserver (`www-data`), see also [#15](https://github.com/yiisoft/yii2-docker/issues/15)
 - `MYSQL_ROOT_PASSWORD` - this variable is mandatory and specifies the password that will be set for the root superuser account.
 - `MYSQL_DATABASE` - this variable is optional and allows you to specify the name of a database to be created on image startup
 
@@ -56,4 +56,4 @@ so you have to configure your IDE to receive connections from that ip.
 
 ## FAQ
 
-- Depending on the (Debian) base-image (usually PHP <7.4) you might need to set `X_LEGACY_GD_LIB=1`
+- Depending on the PHP base-image (usually version <7.4) you might need to set `X_LEGACY_GD_LIB=1`
