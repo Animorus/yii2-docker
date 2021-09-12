@@ -36,8 +36,6 @@ The `Dockerfile`(s) of this repository are designed to build from different PHP-
 
 Adjust the versions in `.env` if you want to build a specific version.
 
-> **Note:** Please make sure to use a matching combination of `DOCKERFILE_FLAVOUR` and `PHP_BASE_IMAGE_VERSION`
-
 ## Configuration
 
 - `PHP_ENABLE_XDEBUG` whether to load an enable Xdebug, defaults to `0` (false)
@@ -57,10 +55,6 @@ To enable Xdebug, set `PHP_ENABLE_XDEBUG=1` in .env file
 
 Xdebug is configured to call ip `xdebug.remote_host` on `9005` port (not use standard port to avoid conflicts),
 so you have to configure your IDE to receive connections from that ip.
-
-## Documentation
-
-More information can be found in the [docs](/docs) folder.
 
 ## FAQ
 
