@@ -2,7 +2,7 @@
 # ==============================================
 
 ARG PHP_BASE_IMAGE_VERSION
-FROM php:${PHP_BASE_IMAGE_VERSION}
+FROM php:${PHP_BASE_IMAGE_VERSION}-apache
 
 # Install system packages for PHP extensions recommended for Yii 2.0 Framework
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/

@@ -1,7 +1,7 @@
 version: "3.0"
 services:
-    mysql:
-        image: mysql:5.7
+    database:
+        image: ${DATABASE_IMAGE_NAME}
         volumes:
             - ./mysql/custom.cnf:/etc/mysql/conf.d/custom.cnf
             - ./mysql/data:/docker-entrypoint-initdb.d
@@ -15,17 +15,17 @@ services:
             - app-network
     phpmyadmin:
         depends_on:
-            - mysql
+            - database
         image: phpmyadmin/phpmyadmin
         environment:
-            PMA_HOST: mysql
+            PMA_HOST: database
         ports:
             - 3001:80
         networks:
             - app-network
     php:
         depends_on:
-            - mysql
+            - database
         build:
             dockerfile: Dockerfile
             context: "php"
@@ -34,6 +34,7 @@ services:
                 - X_LEGACY_GD_LIB
                 - PECL_XDEBUG_INSTALL_SUFFIX
                 - PECL_MONGODB_INSTALL_SUFFIX
+        image: ${PHP_IMAGE_NAME}:${PHP_BASE_IMAGE_VERSION}-apache
         environment:
             - GITHUB_API_TOKEN=${GITHUB_API_TOKEN}
             - PHP_ENABLE_XDEBUG=1
