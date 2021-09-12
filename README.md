@@ -1,8 +1,8 @@
 This is a fork of the official  [Yii 2.0 Framework](http://www.yiiframework.com/) image [repository](https://github.com/yiisoft/yii2-docker). The functionality has been changed to suit my personal needs.
 
 ## Features:
-- Apache only
-- Removed flavor dockerfile
+- Apache
+- Debian
 - Added mySQL
 - Added phpMyAdmin
 - Disabled mongoDB
